@@ -1,0 +1,61 @@
+public class Kole {
+    String name;
+    int salary;
+    int workHours;
+    int hireYear;
+    double tax;
+    int bonusHesaplama;
+    double raiseSalary;
+    int year = 2021;
+    double total;
+
+    Kole(String name, int salary, int workHours, int hireYear) {
+        this.name = name;
+        this.salary = salary;
+        this.workHours = workHours;
+        this.hireYear = hireYear;
+
+
+        System.out.println(" Adı : " + this.name);
+        System.out.println(" Maaşı : " + this.salary);
+        System.out.println(" Çalışma Saati : " + this.workHours);
+        System.out.println(" Baslangıç Yılı : " + this.hireYear);
+
+    }
+
+    void tax() {
+        if (this.salary < 1000) {
+            System.out.println(" Sayın yetersiz bakiye vergiden muafsınız 0_o");
+        }
+        if (this.salary > 1000) {
+            this.tax = this.salary * 0.03;
+            System.out.println(" Vergi : " + this.tax);
+        }
+    }
+
+    void bonusHesaplama() {
+        if (this.workHours > 40) {
+            this.bonusHesaplama = (this.workHours - 40) * 30;
+            System.out.println(" Bonus : " + this.bonusHesaplama);
+        }
+
+    }
+
+    void raiseSalary() {
+        if ((this.year - this.hireYear) <= 9) {
+            this.raiseSalary = this.salary * 0.05;
+        }
+        if ((this.year - this.hireYear) >= 10 && (this.year - this.hireYear) <= 19 ) {
+            this.raiseSalary = this.salary * 0.10;
+        }if ((this.year - this.hireYear) >= 20) {
+            this.raiseSalary = this.salary * 0.15;
+        }
+        System.out.println(" Maaş Artışı : " + this.raiseSalary);
+    }
+
+    void total(){
+        this.total = (this.salary + this.bonusHesaplama + this.raiseSalary) - (this.tax);
+        System.out.println(" Net Maaş : " + this.total);
+
+    }
+}
