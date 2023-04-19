@@ -1,0 +1,11 @@
+public class Employee {
+    public static void main(String[] args){
+
+        Kole p1 = new Kole("Enver Salmanov",2000,45,1985);
+        p1.tax();
+        p1.bonusHesaplama();
+        p1.raiseSalary();
+        p1.total();
+    }
+
+}
